@@ -1,6 +1,14 @@
 #import
 
 #global変数の宣言
+ELEMENT_SYMBOLS={
+        '火':'$',
+        '水':'~',
+        '風':'@',
+        '土':'#',
+        '命':'&',
+        '無':' ',
+        }
 
 #関数宣言
 
@@ -77,9 +85,9 @@ def do_battle(monster):
 
 def print_monster_name(monster):
     monster_name=monster['name']
-
+    symbol=ELEMENT_SYMBOLS[monster['element']]
     #モンスター名を表示
-    print(f'{monster_name}',end='')
+    print(f'{symbol}{monster_name}{symbol}',end='')
 
 # main　関数の呼び出し
 main()
