@@ -1,5 +1,4 @@
 #import
-import random
 
 #global変数の宣言
 ELEMENT_SYMBOLS={
@@ -140,6 +139,7 @@ def do_battle(party,monster):
         on_enemy_turn(party,monster)
         if party['hp']<=0:
             print('パーティのHPは０になった')
+            print(f'{party['name']}はダンジョンから逃げ出した')
             return 0
 
     print_monster_name(monster)
@@ -186,19 +186,19 @@ def on_enemy_turn(party,monster):
     print(f'\n【',end='')
     print_monster_name(monster)
     print(f'のターン】(HP={monster['hp']})')
-    do_enemy_attack(party)
+    damage=200
+    print(f'{damege}のダメージを与えた')
+    party['hp'] -= damege
 
 def do_player_attack(monster,command):
     damage= hash(command) % 50
     rand = random.uniform(-0.1,0.1)+1
     damage=int(damage*rand)
     print(f'{damage}のダメージを与えた')
-    monster['hp'] -= damage
+    monster['hp'] -= damege
 
 def do_enemy_attack(party):
-    damage=200
-    print(f'{damage}のダメージを受けた')
-    party['hp'] -= damage
+    pass
 
 
 # main　関数の呼び出し
