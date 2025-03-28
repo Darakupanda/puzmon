@@ -189,7 +189,7 @@ def on_enemy_turn(party,monster):
     do_enemy_attack(party)
 
 def do_player_attack(monster,command):
-    damage= hash(command) % 50
+    damage= int(hash(command)) % 50
     rand = random.uniform(-0.1,0.1)+1
     damage=int(damage*rand)
     print(f'{damage}のダメージを与えた')
